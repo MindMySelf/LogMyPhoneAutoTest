@@ -52,4 +52,8 @@ public class DashboardPOM {
     public boolean checkVisibilityOfProfileButton() {
         return this.profileButton.isDisplayed();
     }
+
+    public By getProfileButton() {
+        return By.id("fade-button");
+    }
 }
