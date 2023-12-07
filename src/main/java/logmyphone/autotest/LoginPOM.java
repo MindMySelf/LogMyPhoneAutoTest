@@ -42,9 +42,65 @@ public class LoginPOM {
             wait.until(ExpectedConditions.visibilityOf(emailInputField));
             emailInputField.sendKeys(email);
         } catch (NoSuchElementException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
+    public void enterPassword(String password) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+            passwordInputField.sendKeys(password);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void checkRememberMe() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(rememberMeCheckbox));
+            if (!rememberMeCheckbox.isSelected()) {
+                rememberMeCheckbox.click();
+            }
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void uncheckRememberMe() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(rememberMeCheckbox));
+            if (rememberMeCheckbox.isSelected()) {
+                rememberMeCheckbox.click();
+            }
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickSignIn() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(signInButton));
+            signInButton.click();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickForgotPasswordLink() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(forgotPasswordLink));
+            forgotPasswordLink.click();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickSignUpLink() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(signUpLink));
+            signUpLink.click();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
 }
