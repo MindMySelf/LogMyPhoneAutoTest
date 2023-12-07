@@ -29,6 +29,8 @@ public class RegisterPOM {
     private WebElement signInLink;
     @FindBy(linkText = "logmyphones.com")
     private WebElement copyRightLink;
+    @FindBy(css = ".MuiAlert-message")
+    private WebElement sucessfulMessagePopup;
 
     public RegisterPOM(WebDriver driver) {
         this.driver = driver;
@@ -70,5 +72,8 @@ public class RegisterPOM {
     }
     public void clickCopyRightLink() {
         copyRightLink.click();
+    }
+    public boolean isSuccessfulPopupDisplayed() {
+        return sucessfulMessagePopup.isDisplayed();
     }
 }
