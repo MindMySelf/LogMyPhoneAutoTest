@@ -1,4 +1,4 @@
-package logmyphone.autotest.Dashboard;
+package logmyphone.autotest.dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,5 +47,9 @@ public class DashboardPOM {
     public void clickOnLogout(By element) {
         clickOnProfileButton(element);
         this.logoutButton.click();
+    }
+
+    public boolean checkVisibilityOfProfileButton() {
+        return this.profileButton.isDisplayed();
     }
 }
