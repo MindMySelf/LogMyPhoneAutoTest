@@ -15,22 +15,22 @@ public class LoginPOM {
     private final WebDriverWait wait;
 
     @FindBy(id = "email")
-    WebElement emailInputField;
+    private WebElement emailInputField;
 
     @FindBy(id = "password")
-    WebElement passwordInputField;
+    private WebElement passwordInputField;
 
     @FindBy(css = "html body div.MuiModal-root.css-79ws1d-MuiModal-root div.MuiBox-root.css-1kszvuq div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6.MuiGrid-root.MuiGrid-container.css-5by4qi-MuiPaper-root-MuiGrid-root div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-7.MuiGrid-grid-md-6.css-mb8s4g-MuiGrid-root div.MuiBox-root.css-1sv93hn form.MuiBox-root.css-164r41r label.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd.css-j204z7-MuiFormControlLabel-root span.MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.PrivateSwitchBase-root.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root input.PrivateSwitchBase-input.css-1m9pwf3")
-    WebElement rememberMeCheckbox;
+    private WebElement rememberMeCheckbox;
 
     @FindBy(css = "html body div.MuiModal-root.css-79ws1d-MuiModal-root div.MuiBox-root.css-1kszvuq div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6.MuiGrid-root.MuiGrid-container.css-5by4qi-MuiPaper-root-MuiGrid-root div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-7.MuiGrid-grid-md-6.css-mb8s4g-MuiGrid-root div.MuiBox-root.css-1sv93hn form.MuiBox-root.css-164r41r button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-fullWidth.css-1vhaqj4-MuiButtonBase-root-MuiButton-root")
-    WebElement signInButton;
+    private WebElement signInButton;
 
     @FindBy(css = "html body div.MuiModal-root.css-79ws1d-MuiModal-root div.MuiBox-root.css-1kszvuq div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6.MuiGrid-root.MuiGrid-container.css-5by4qi-MuiPaper-root-MuiGrid-root div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-7.MuiGrid-grid-md-6.css-mb8s4g-MuiGrid-root div.MuiBox-root.css-1sv93hn form.MuiBox-root.css-164r41r div.MuiGrid-root.MuiGrid-container.css-11lq3yg-MuiGrid-root div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-true.css-1vd824g-MuiGrid-root a.MuiTypography-root.MuiTypography-body2.MuiLink-root.MuiLink-underlineAlways.css-101ca9i-MuiTypography-root-MuiLink-root")
-    WebElement forgotPasswordLink;
+    private WebElement forgotPasswordLink;
 
     @FindBy(css = "html body div.MuiModal-root.css-79ws1d-MuiModal-root div.MuiBox-root.css-1kszvuq div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6.MuiGrid-root.MuiGrid-container.css-5by4qi-MuiPaper-root-MuiGrid-root div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-7.MuiGrid-grid-md-6.css-mb8s4g-MuiGrid-root div.MuiBox-root.css-1sv93hn form.MuiBox-root.css-164r41r div.MuiGrid-root.MuiGrid-container.css-11lq3yg-MuiGrid-root div.MuiGrid-root.MuiGrid-item.css-13i4rnv-MuiGrid-root a.MuiTypography-root.MuiTypography-body2.MuiLink-root.MuiLink-underlineAlways.css-101ca9i-MuiTypography-root-MuiLink-root")
-    WebElement signUpLink;
+    private WebElement signUpLink;
 
     public LoginPOM(WebDriver driver) {
         PageFactory.initElements(driver, this);
