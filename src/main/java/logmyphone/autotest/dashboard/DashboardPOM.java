@@ -58,4 +58,8 @@ public class DashboardPOM {
         }
 
     }
+
+    public By getProfileButton() {
+        return By.id("fade-button");
+    }
 }
