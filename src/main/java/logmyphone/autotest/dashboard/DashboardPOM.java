@@ -1,6 +1,7 @@
 package logmyphone.autotest.dashboard;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +51,11 @@ public class DashboardPOM {
     }
 
     public boolean checkVisibilityOfProfileButton() {
-        return this.profileButton.isDisplayed();
+        try {
+            return this.profileButton.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+
     }
 }
