@@ -6,6 +6,8 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class RegisterPOMTest {
     private static WebDriver driver;
     private RegisterPOM registerPOM;
@@ -25,6 +27,12 @@ class RegisterPOMTest {
 
     @Test
     public void successfulRegistrationTest() {
+        registerPOM.addName("Tutyimutyi");
+        registerPOM.addEmail("tutyimutyi@gmail.com");
+        registerPOM.addPassword("MajomKenyérfa12...");
+        registerPOM.addConfirmPasword("MajomKenyérfa12...");
+        registerPOM.clickButton();
+        assertTrue(registerPOM.isSuccessfulPopupDisplayed());
     }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterName.csv")
