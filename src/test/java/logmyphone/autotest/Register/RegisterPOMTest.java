@@ -41,18 +41,29 @@ class RegisterPOMTest {
     }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterName.csv")
-    public void nameFieldTest() {
-
+    public void nameFieldTest(String name) {
+        registerPOM.addName(name);
+        assertTrue(registerPOM.isNameErrorDisplayed());
     }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterEmail.csv")
-    public void emailFieldTest() {}
+    public void emailFieldTest(String email) {
+        registerPOM.addEmail(email);
+        assertTrue(registerPOM.isEmailErrorDisplayed());
+    }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterPassword.csv")
-    public void passwordFieldTest() {}
+    public void passwordFieldTest(String password) {
+        registerPOM.addPassword(password);
+        assertTrue(registerPOM.isPasswordErrorDisplayed());
+    }
     @ParameterizedTest
-    @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterPassword.csv")
-    public void confirmPasswordFieldTest() {}
+    @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterConfirmPassword.csv")
+    public void confirmPasswordFieldTest(String password, String confirmPassword) {
+        registerPOM.addPassword(password);
+        registerPOM.addConfirmPasword(confirmPassword);
+        assertTrue(registerPOM.isConfirmPasswordErrorDisplayed());
+    }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterData.csv")
     public void allFieldTest() {}
