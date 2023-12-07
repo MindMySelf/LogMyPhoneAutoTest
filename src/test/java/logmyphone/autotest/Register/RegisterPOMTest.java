@@ -26,12 +26,12 @@ class RegisterPOMTest {
     void beforeEach() {
         registerPOM = new RegisterPOM(driver);
         landingPagePOM = new LandingPagePOM(driver);
+        driver.get("http://localhost:3000/");
+        landingPagePOM.clickOnRegisterButton();
     }
 
     @Test
     public void successfulRegistrationTest() throws InterruptedException {
-        driver.get("http://localhost:3000/");
-        landingPagePOM.clickOnRegisterButton();
         registerPOM.addName("Tutyimutyi");
         registerPOM.addEmail("tutyimutyi@gmail.com");
         registerPOM.addPassword("MajomKenyérfa12...");
@@ -41,7 +41,9 @@ class RegisterPOMTest {
     }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterName.csv")
-    public void nameFieldTest() {}
+    public void nameFieldTest() {
+
+    }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/java/logmyphone/autotest/Register/resources/RegisterEmail.csv")
     public void emailFieldTest() {}
