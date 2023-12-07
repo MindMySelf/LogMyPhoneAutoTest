@@ -26,12 +26,49 @@ public class RegisterPOM {
     @FindBy(xpath = "//button[className='css-1vhaqj4-MuiButtonBase-root-MuiButton-root'][text()='Register']")
     private WebElement registerButton;
     @FindBy(linkText = "Already have an account? Sign In")
-    private WebElement signInButton;
+    private WebElement signInLink;
     @FindBy(linkText = "logmyphones.com")
     private WebElement copyRightLink;
 
     public RegisterPOM(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
+    }
+    public String addName(String name) {
+        nameField.sendKeys(name);
+        return nameField.getText();
+    }
+    public String addEmail(String email) {
+        emailField.sendKeys(email);
+        return emailField.getText();
+    }
+    public String addPassword(String password) {
+        passwordField.sendKeys(password);
+        return passwordField.getText();
+    }
+    public String addConfirmPasword(String confpassword) {
+        confirmPasswordField.sendKeys(confpassword);
+        return confirmPasswordField.getText();
+    }
+    public void clickButton() {
+        registerButton.click();
+    }
+    public boolean isNameErrorDisplayed() {
+        return nameErrorText.isDisplayed();
+    }
+    public boolean isEmailErrorDisplayed() {
+        return emailErrorText.isDisplayed();
+    }
+    public boolean isPasswordErrorDisplayed() {
+        return passwordErrorText.isDisplayed();
+    }
+    public boolean isConfirmPasswordErrorDisplayed() {
+        return confirmPasswordErrorText.isDisplayed();
+    }
+    public void clickSignInLink() {
+        signInLink.click();
+    }
+    public void clickCopyRightLink() {
+        copyRightLink.click();
     }
 }
