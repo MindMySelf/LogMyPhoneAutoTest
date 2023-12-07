@@ -1,4 +1,4 @@
-package logmyphone.autotest.Dashboard;
+package logmyphone.autotest.dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
