@@ -48,4 +48,8 @@ public class DashboardPOM {
         clickOnProfileButton(element);
         this.logoutButton.click();
     }
+
+    public boolean checkVisibilityOfProfileButton() {
+        return this.profileButton.isDisplayed();
+    }
 }
