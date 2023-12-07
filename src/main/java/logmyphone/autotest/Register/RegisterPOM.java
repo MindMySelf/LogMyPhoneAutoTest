@@ -1,5 +1,6 @@
 package logmyphone.autotest.Register;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,7 @@ public class RegisterPOM {
     private WebElement confirmPasswordField;
     @FindBy(id = "confirmPassword-helper-text")
     private WebElement confirmPasswordErrorText;
-    @FindBy(xpath = "//button[className='css-1vhaqj4-MuiButtonBase-root-MuiButton-root'][text()='Register']")
+    @FindBy(xpath = "//button[@type='submit'][text()='Register']")
     private WebElement registerButton;
     @FindBy(linkText = "Already have an account? Sign In")
     private WebElement signInLink;
@@ -84,7 +85,8 @@ public class RegisterPOM {
     public void clickCopyRightLink() {
         copyRightLink.click();
     }
-    public boolean isSuccessfulPopupDisplayed() {
+    public boolean isSuccessfulPopupDisplayed() throws InterruptedException {
+        wait.until(ExpectedConditions.invisibilityOf(registerButton));
         return sucessfulMessagePopup.isDisplayed();
     }
 }

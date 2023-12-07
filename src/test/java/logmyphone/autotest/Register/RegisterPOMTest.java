@@ -1,5 +1,6 @@
 package logmyphone.autotest.Register;
 
+import logmyphone.autotest.landingPage.LandingPagePOM;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RegisterPOMTest {
     private static WebDriver driver;
     private RegisterPOM registerPOM;
+    private LandingPagePOM landingPagePOM;
 
     @BeforeAll
     static void beforeAll() {
@@ -23,10 +25,13 @@ class RegisterPOMTest {
     @BeforeEach
     void beforeEach() {
         registerPOM = new RegisterPOM(driver);
+        landingPagePOM = new LandingPagePOM(driver);
     }
 
     @Test
-    public void successfulRegistrationTest() {
+    public void successfulRegistrationTest() throws InterruptedException {
+        driver.get("http://localhost:3000/");
+        landingPagePOM.clickOnRegisterButton();
         registerPOM.addName("Tutyimutyi");
         registerPOM.addEmail("tutyimutyi@gmail.com");
         registerPOM.addPassword("MajomKenyérfa12...");
