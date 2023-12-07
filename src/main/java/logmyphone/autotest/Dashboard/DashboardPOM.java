@@ -1,14 +1,16 @@
-package logmyphone.autotest.DashboardPOM;
+package logmyphone.autotest.Dashboard;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Dashboard {
+public class DashboardPOM {
 
     @FindBy(id = "fade-button")
     private WebElement profileButton;
@@ -31,9 +33,19 @@ public class Dashboard {
     private final WebDriver webDriver;
     private final WebDriverWait wait;
 
-    public Dashboard(WebDriver webDriver) {
+    public DashboardPOM(WebDriver webDriver) {
         this.webDriver = webDriver;
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         PageFactory.initElements(webDriver, this);
+    }
+
+    private void clickOnProfileButton(By element) {
+        this.profileButton.click();
+        this.wait.until(ExpectedConditions.presenceOfElementLocated(element));
+    }
+
+    public void clickOnLogout(By element) {
+        clickOnProfileButton(element);
+        this.logoutButton.click();
     }
 }
