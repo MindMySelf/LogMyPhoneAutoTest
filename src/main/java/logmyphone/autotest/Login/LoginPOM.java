@@ -1,4 +1,4 @@
-package logmyphone.autotest;
+package logmyphone.autotest.Login;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
